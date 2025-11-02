@@ -1,0 +1,245 @@
+* {
+    padding: 0;
+    box-sizing: border-box;     
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: rgba(52, 46, 46, 0.529);
+}
+body{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        filter: brightness(100%);
+
+        
+        
+}
+
+
+#cabezera{
+    text-align: center;
+    background-color: white;
+    border-radius: 30px;
+    position: relative;
+    top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+
+#cabezado{
+    background-color:blueviolet;
+    height: 50px;
+    border-radius: 10px;
+}
+
+h3{
+    color:white;
+    position: relative;
+    top: 15px;
+    margin-left: 40px;
+}
+
+#enlace1{
+    
+    height: 20;
+    right: 70px;
+    color: blueviolet;
+    position: relative;
+    top: 10px;
+    display: inline-block;
+}
+
+#enlace2{
+    
+    height: 40px;
+    left: 60px;
+    position: relative;
+    top: 10px;
+    color: blueviolet;
+    display: inline-block;
+    
+}
+#gamestore{
+    color:white;
+    position: relative;
+    top: 10px;
+    margin-left: 40px;
+    
+}
+
+
+
+h4{
+    position: relative;
+    top: -56px;
+}
+
+#pri{
+    color: white;
+    position: relative;
+    top: -30px;
+    margin-left: 1300px;
+}
+
+#seg{
+    color: white;
+    position: relative;
+    top: -70px;
+    margin-left: 1450px;
+}
+
+#pri2{
+    color: white;
+    position: relative;
+    top: -30px;
+    margin-left: 1200px;
+}
+
+#seg2{
+    color: white;
+    position: relative;
+    top: -56px;
+    margin-left: 1350px;
+}
+
+#textindex{
+    position: relative;
+    top: 200px;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+#textindex:hover{
+    color: rgb(139, 41, 118);
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+    animation: parpadear 1.5s infinite alternate;
+}
+#text{
+    position: relative;
+    top: 200px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#text:hover{
+    color: rgb(139, 41, 118);
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+    
+}
+
+#botonindex{
+    position: relative;
+    top: 250px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#botonindex:hover{
+    background-color: grey;
+    transform: scale(1.08);
+    opacity: 0.9;
+}
+
+.imagen-fondo{
+    height: 719px;
+    background-image: url('imagen4.jpg');
+    background-size: cover;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: white;
+    position: relative;
+    top: -40px;
+    height: 90vh;
+}
+
+.imagen-fondo::before{
+    content: "";
+    position: absolute;
+    top: -900px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#footer{
+    background-color:blueviolet;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    top: -40px;
+    
+}
+
+#pie{
+    color: white;
+    position: relative;
+    top: -15px;
+    margin-left: 40px;
+}
+
+
+#cabeza{
+    
+    height: 730px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+}
+
+
+
+#formulario{
+    margin-left: 550px;
+    margin-right: 550px;
+    text-align: center;
+    background-color: white;
+    border-radius: 30px;
+    position: relative;
+    top: 90px;
+}
+#game{
+    
+    color: blueviolet;
+    animation: cambiarColor 4s infinite;
+}
+#game:hover{
+    color: rgb(180, 45, 155);
+    text-shadow: 0 0 10px rgb(179, 169, 177), 0 0 20px rgb(199, 184, 193), 0 0 40px rgb(218, 205, 212);
+    animation: parpadear 1.5s infinite alternate;
+    
+}
+
+
+#sesion{
+    position: relative;
+    top: -20px;
+    color: blueviolet;
+    
+}
+@keyframes cambiarColor {
+  0%   { color: #85b61a; }
+  25%  { color: #00ff00; }
+  50%  { color: #d31668; }
+  75%  { color: #0dae68; }
+  100% { color: #2d854b; }
+}
+
+
+
+
+
