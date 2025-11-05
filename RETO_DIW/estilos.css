@@ -1,458 +1,143 @@
-* {
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  align-items: flex-start;
-  flex-direction: column;
-  
+/* ===== Paleta GAME ===== */
+:root{
+  --game-magenta:#E20074;
+  --game-magenta-700:#c00062;
+  --ink:#1c1c1c;
+  --ink-2:#444;
+  --line:#e6e6e6;
+  --bg:#f7f7f7;
+  --card:#ffffff;
 }
 
-
-
-#cabezera{
-    text-align: center;
-    background-color: white;
-    border-radius: 30px;
-    position: relative;
-    top: 50px;
-    margin-left: 200px;
-    margin-right: 200px;
+/* Reset suave */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
 }
 
-
-#cabezado{
-    text-align: center;
-    background-color:blueviolet;
-    height: 50px;
-    border-radius: 10px;
+/* ===== Barra superior estilo “pestaña magenta” ===== */
+.barra{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:12px 16px;
+  background:#ffffff;
+  border-bottom:1px solid var(--line);
+}
+.barra h1{
+  margin:0;
+  font-size:1.25rem;
+  font-weight:800;
+  letter-spacing:.2px;
+  position:relative;
+  padding-left:6px;
+}
+.barra h1::after{
+  content:"";
+  display:block;
+  width:82px;
+  height:4px;
+  background:var(--game-magenta);
+  margin-top:6px;
+  border-radius:999px;
 }
 
-h3{
-    color:white;
-    position: relative;
-    top: 15px;
-    margin-left: 40px;
+/* ===== Contenedor tarjeta ===== */
+.formulario{
+  max-width:860px;
+  margin:28px auto;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  box-shadow:0 8px 18px rgba(0,0,0,.05);
+  overflow:hidden;
 }
 
-#enlace1{
-    
-    height: 20;
-    right: 70px;
-    color: blueviolet;
-    position: relative;
-    top: 10px;
-    display: inline-block;
+/* ===== Botones ===== */
+button{
+  appearance:none;
+  border:0;
+  border-radius:6px;
+  padding:10px 14px;
+  font-weight:700;
+  cursor:pointer;
+  transition:background .15s ease, box-shadow .15s ease, transform .06s ease;
 }
 
-#enlace2{
-    
-    height: 40px;
-    left: 60px;
-    position: relative;
-    top: 10px;
-    color: blueviolet;
-    display: inline-block;
-    
+/* Botón volver (estilo claro con borde) */
+#boton{
+  background:#fff;
+  color:var(--ink-2);
+  border:1px solid var(--line);
 }
-#gamestore{
-    color:white;
-    position: relative;
-    top: 10px;
-    margin-left: 40px;
-    
+#boton:hover{box-shadow:0 2px 8px rgba(0,0,0,.08)}
+
+/* Botón principal */
+button[type="submit"]{
+  background:var(--game-magenta);
+  color:#fff;
+  width:100%;
+  margin-top:6px;
+  box-shadow:0 6px 14px rgba(226,0,116,.25);
+}
+button[type="submit"]:hover{background:var(--game-magenta-700)}
+button[type="submit"]:active{transform:translateY(1px)}
+
+/* ===== Formulario ===== */
+form{
+  padding:18px 18px 22px;
+  display:grid;
+  gap:14px;
 }
 
-
-
-h4{
-    position: relative;
-    top: -56px;
+/* Cada campo en bloque con etiqueta arriba */
+label{
+  display:grid;
+  gap:8px;
+  font-size:.95rem;
+  color:var(--ink-2);
 }
 
-#pri{
-    color: white;
-    position: relative;
-    top: -30px;
-    margin-left: 1300px;
+/* Inputs estilo GAME */
+input[type="text"],
+input[type="number"]{
+  width:100%;
+  padding:12px 12px;
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:#fff;
+  color:var(--ink);
+  outline:none;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+input:focus{
+  border-color:var(--game-magenta);
+  box-shadow:0 0 0 3px rgba(226,0,116,.12);
 }
 
-#seg{
-    color: white;
-    position: relative;
-    top: -70px;
-    margin-left: 1450px;
+/* “Píldora” destacando el nombre del campo (opcional visual) */
+label > span{
+  font-weight:700;
+  color:var(--ink);
 }
 
-#pri2{
-    color: white;
-    position: relative;
-    top: -30px;
-    margin-left: 1200px;
-}
+/* Ayuda visual nativa de validación */
+input:required:invalid{border-color:#f2b2c9}
+input:required:valid{border-color:#b7e3cb}
 
-#seg2{
-    color: white;
-    position: relative;
-    top: -56px;
-    margin-left: 1350px;
-}
+/* ===== Separadores sutiles (si usas <br>) ===== */
+form br{display:none}
 
-#textindex{
-    position: relative;
-    top: 200px;
-    font-size: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
-#textindex:hover{
-    color: rgb(139, 41, 118);
-    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
-    animation: parpadear 1.5s infinite alternate;
-}
-#text{
-    position: relative;
-    top: 200px;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#text:hover{
-    color: rgb(139, 41, 118);
-    
-    
-}
-
-#titulo-juegos{
-    text-align: center;
-    background-color: blueviolet;
-    color: white;
-    
-}
-#fila-juegos{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    position: relative;
-    top: 250px;
-    background-color: white;
-    margin-left: 400px;
-}
-
-#juegos{
-    background-color: white;
-    height: 1300px;
-    
-}
-
-#juego1{
-    position: relative;
-    top: 60px;
-    margin: 50px;
-    margin-left: 150px;
-    height: 290px;
-}
-#base1{
-    position: relative;
-    top: 15px;
-    margin-left: 150px;
-}
-
-#juego2{
-    position: relative;
-    top: -350px;
-    margin-left: 560px;
-    height: 290px;
-}
-#base2{
-    position: relative;
-    top: -345px;
-    margin-left: 550px;
-}
-
-#juego3{
-    position: relative;
-    top: -704px;
-    margin-left: 950px;
-    height: 290px;
-}
-#base3{
-    position: relative;
-    top: -700px;
-    margin-left: 950px;
-}
-
-#juego4{
-    position: relative;
-    top: -1060px;
-    margin-left: 1350px;
-    height: 290px;
-}
-#base4{
-    position: relative;
-    top: -1060px;
-    margin-left: 1350px;
-}
-
-#juego5{
-    position: relative;
-    top: -890px;
-    margin-left: 150px;
-    height: 290px;
-}
-#base5{
-    position: relative;
-    top: -890px;
-    margin-left: 150px;
-}
-
-#juego6{
-    position: relative;
-    top: -1250px;
-    margin-left: 550px;
-    height: 290px;
-}
-#base6{
-    position: relative;
-    top: -1250px;
-    margin-left: 550px;
-}
-
-#juego7{
-    position: relative;
-    top: -1608px;
-    margin-left: 950px;
-    height: 290px;
-}
-#base7{
-    position: relative;
-    top: -1610px;
-    margin-left: 950px;
-}
-
-#juego8{
-    position: relative;
-    top: -1969px;
-    margin-left: 1350px;
-    height: 290px;
-}
-#base8{
-    position: relative;
-    top: -1965px;
-    margin-left: 1350px;
-}
-
-#botonindex{
-    position: relative;
-    top: 250px;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px 20px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#botonindex:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-}
-
-#botonComprar, #botonComprar2, #botonComprar3, #botonComprar4, #botonComprar5, #botonComprar6, #botonComprar7, #botonComprar8{
-    position: relative;
-    top: -1800px;
-    padding: 10px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 100px;
-    background-color: blueviolet;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    line-height: normal;
-}
-#botonComprar:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-}
-#botonComprar2:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-}
-#botonComprar3:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-}
-#botonComprar4:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-}
-#botonComprar5:hover{           
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-}
-#botonComprar6:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-}
-#botonComprar7:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-}
-#botonComprar8:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-}
-
-#botonComprar{
-    position: relative;
-    top: -2480px;
-    margin-left: 150px;
-}
-
-#botonComprar2{
-    position: relative;
-    top: -2480px;
-    margin-left: 300px;
-}
-#botonComprar3{
-    position: relative;
-    top: -2480px;
-    margin-left: 300px;
-}
-#botonComprar4{
-    position: relative;
-    top: -2480px;
-    margin-left: 300px;
-}
-#botonComprar5{
-    position: relative;
-    top: -1999px;
-    margin-left: 150px;
-}
-#botonComprar6{
-    position: relative;
-    top: -1999px;
-    margin-left: 300px;
-}
-#botonComprar7{
-    position: relative;
-    top: -1999px;
-    margin-left: 300px;
-}
-#botonComprar8{
-    position: relative;
-    top: -1999px;
-    margin-left: 300px;
-}
-
-
-#imagen4{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 107%;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(60%);
-}
-
-.imagen-fondo{
-    height: 719px;
-    background-size: cover;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.0);
-    color: white;
-    position: relative;
-    top: -40px;
-    height: 90vh;
-}
-
-.imagen-fondo::before{
-    content: "";
-    position: absolute;
-    top: -900px;
-    top: 6px;
-    left: 0px;
-    width: 100%;
-    height: 107%;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-}
-
-#footer{
-    background-color:blueviolet;
-    text-align: center;
-    border-radius: 10px;
-    position: relative;
-    top: -40px;
-    
-}
-
-#pie{
-    color: white;
-    position: relative;
-    top: -15px;
-    margin-left: 40px;
-}
-
-
-#cabeza{
-    
-    height: 730px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 30px;
-}
-
-
-
-#formulario{
-    margin-left: 550px;
-    margin-right: 550px;
-    text-align: center;
-    background-color: white;
-    border-radius: 30px;
-    position: relative;
-    top: 90px;
-}
-#game{
-    
-    color: blueviolet;
-    animation: cambiarColor 4s infinite;
-}
-#game:hover{
-    color: rgb(180, 45, 155);
-    text-shadow: 0 0 10px rgb(179, 169, 177), 0 0 20px rgb(199, 184, 193), 0 0 40px rgb(218, 205, 212);
-    animation: parpadear 1.5s infinite alternate;
-    
-}
-
-
-#sesion{
-    position: relative;
-    top: -20px;
-    color: blueviolet;
-    
-}
-@keyframes cambiarColor {
-  0%   { color: #85b61a; }
-  25%  { color: #00ff00; }
-  50%  { color: #d31668; }
-  75%  { color: #0dae68; }
-  100% { color: #2d854b; }
+/* ===== Responsive: dos columnas medias y una en móvil ===== */
+@media(min-width:720px){
+  form{
+    grid-template-columns:1fr 1fr;
+    gap:16px 18px;
+  }
+  /* el botón ocupa todo el ancho */
+  button[type="submit"]{grid-column:1/-1}
 }

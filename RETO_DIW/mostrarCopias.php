@@ -1,4 +1,3 @@
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +12,15 @@ if ($conexion->connect_errno) {
     die("No se pudo establecer conexión: " . $conexion->connect_error);
 }
 
-$consulta = "SELECT * FROM juegos    ";
+$consulta = "SELECT
+    c.id_copia,j.nombre AS nombre_juego, p.nombre AS plataforma, c.precio_nuevo, c.precio_seminuevo, c.precio_compra, c.stock, c.id_almacenes
+FROM copias c
+JOIN juegos j ON j.id_juego = c.id_juegos
+LEFT JOIN plataformas p ON p.id_plataforma = c.id_plataformas
+ORDER BY j.nombre, p.nombre;
+
+";
+
 $respuesta = $conexion->query($consulta);
 
 if ($respuesta && $respuesta->num_rows > 0) {
