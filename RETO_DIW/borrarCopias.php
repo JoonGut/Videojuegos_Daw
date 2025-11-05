@@ -27,10 +27,10 @@ $fila2 = mysqli_fetch_assoc($convertirPlataforma);
 $id_plataforma = $fila2['id_plataforma'];
 
 
-$existe = mysqli_query($conexion, "SELECT 1 FROM juegos WHERE nombre='$nom' LIMIT 1");
+$existe = mysqli_query($conexion, "SELECT 1 FROM copias 
+WHERE id_juegos='$id_juego' AND id_plataformas='$id_plataforma' LIMIT 1");
 if (mysqli_num_rows($existe) > 0) {
-    $sqlborrar="DELETE FROM juegos
-                WHERE nombre = '$nom'";
+    $sqlborrar="DELETE FROM copias WHERE id_juegos='$id_juego' AND id_plataformas='$id_plataforma'";
     $ok = mysqli_query($conexion, $sqlborrar);
     if ($ok) {
     echo"El juego ha sido borrado de la base de datos.";
