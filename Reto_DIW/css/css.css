@@ -1,585 +1,523 @@
-* { padding: 0; box-sizing: border-box; }
-html, body { margin: 0;
-   padding: 0; height: 100%;
-   align-items: flex-start;
-   flex-direction: column;
+/* 🔹 Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: brightness(100%);
+  line-height: 1.5;
+  
+}
 
-body{
-   background-repeat: no-repeat;
-   background-size: cover; background-position: center;
-   background-attachment: fixed; filter: brightness(100%);
-  }
-#cabezera{
+/* 🔹 Cabecera */
+#cabezado {
   display: flex;
-  text-align: center;
-  background-color: white;
-  border-radius: 30px;
-  position: relative;
-  top: 50px;
-  margin-left: 200px;
-  margin-right: 200px;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgba(172, 164, 164, 0.5);
+  max-width: 1520px;
+  margin-left: 0px;
 }
 
-#cabezado{
-  background-color:white;
-  height: 50px;
-  border-radius: 10px;
-  background-color: rgba(172, 164, 164, 0.5); }
-#cabezado:hover{
-  background-color: rgb(128, 131, 111);
-}
-  h3{
-    color:white;
-    position: relative;
-    top: 15px;
-    margin-left: 40px;
-  }
-#enlace1{
-  height: 20;
-  right: 70px;
-  color: blueviolet;
-  position: relative;
-  top: 10px;
-  display: inline-block;
-}
-#enlace2{
-  height: 40px;
-  left: 60px;
-  position: relative;
-  top: 10px;
-  color: blueviolet;
-  display: inline-block;
-  }
-#gamestore{
+#gamestore {
   color: rgb(201, 10, 112);
-  position: relative;
-  top: 10px;
-  margin-left: 40px;
-  font-size: 30px;
-  margin-right: 1259px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 0%;
 }
 
-#gamestore:hover{
+#gamestore:hover {
   color: rgb(236, 2, 115);
   animation: parpadear 1.5s infinite alternate;
 }
 
-h4{
-  position: relative;
-  top: -56px;
-}
-#pri{
-  color: rgb(228, 218, 218);
-  position: relative;
-  top: -50px;
-  margin-left: 1240px;
-  font-size: 20px; }
-#seg{
-  color: rgb(255, 255, 255);
-  position: relative;
-  top: -100px;
-  margin-left: 1380px;
-  font-size: 20px;
+#cabezado a h4 {
+  color: blueviolet;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-left: 15px;
 }
 
-#pri2{
+/* 🔹 Imagen de fondo y bienvenida */
+.imagen-fondo {
+  position: relative;
+  
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+  text-align: center;
   color: white;
-  position: relative;
-  top: -30px;
-  margin-left: 1200px;
+  margin-bottom: 10px;
 }
 
-#seg2{
-  color: white;
+#enlace{
   position: relative;
-  top: -56px;
-  margin-left: 1350px;
-
+  top: 10px;
+  text-decoration: none;
+  margin-left: 50%;
 }
 
-#textindex{
+#enlace2{
   position: relative;
-  top: 150px;
-  font-size: 50px;
-  font-family: Arial, Helvetica, sans-serif;
+  top: 10px;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+#searchinput{
+  position: relative;
+  top: 0px;
+  width: 250px;
+  height: 45px;
+  border-radius: 5px;
+  border: none;
+  margin-right: -730px;
+}
+
+
+.imagen-fondo img#imgperso {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(40%);
+  
+}
+
+#textindex {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  right: -50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
   font-weight: bold;
 }
-#text{
-   position: relative;
-   top: 150px;
-   font-size: 20px;
-   font-family: Arial, Helvetica, sans-serif;
-  }
 
-#categorias{
-  background-color: white;
-  height: 500px;
-  position: relative;
-  top: 10px;
+#text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  max-width: 80%;
 }
 
-#caza{
+
+#categorias {
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  position: relative;
-  top: 50px;
-  margin-left: 130px;
-  margin-right: 1100px;
-  height: 150px; }
-
-#imagcaza{
-  position: relative;
-  top: 10px;
-  margin-left: 0px;
-  width: 300px;
-  height: 250px;
+  gap: 40px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  height: 450px;
 }
 
-#juegos_de_caza{
-  position: relative;
-  top: 250px;
-  color: black;
-  margin-left: -250px;
+#categoria {
+  background-color: blueviolet;
+  text-align: center;
+  flex: 1 1 250px;
 }
-
-#titulo-categorias{
+#titulo {
+  width: 151%;
+  margin-left: -80%;
+  height: 40px;
+  border-radius: 10px;
+  transition: transform 0.3s, opacity 0.3s;
   text-align: center;
   background-color: blueviolet;
   color: white;
 }
 
-#deportes{
-  position: relative;
-  top: -100px;
-  margin-left: 730px;
-  margin-right: 620px;
-  color: black;
-  height: 150px;
-}
-#juegos_de_Deportes{
-  position: relative;
-  top: 0px;
-  color: black;
-  margin-left: -20px;
+h2{
+  margin-left: 0%;
+  text-align: center;
 }
 
-#imagdepor{
+#caza {
   position: relative;
-  top: 10px;
-  margin-left: -100px;
-  width: 300px;
-  height: 250px;
+  top: 100px;
+  margin-left: -150%;
+}
+#juegos_de_caza {
+  position: relative;
+  top: 5px;
+  margin-left: 25%;
+
 }
 
-#aventura{
-  color: black;
+#imagcaza {
   position: relative;
-  top: -250px;
-  margin-left: 1150px;
-  margin-right: 100px;
-  height: 150px;
+  top: 0%;
+  margin-left: 50%;
 }
-
-#Juegos_de_aventura{
-  position: relative;
-  top: 0px;
-  color: black;
-  margin-left: 20px; }
-#imagventu{
-  position: relative;
-  top: 10px;
-  margin-left: -60px;
-  width: 300px;
-  height: 250px;
-}
-
-#imagventu:hover, #imagdepor:hover, #imagcaza:hover{
+#imagcaza:hover {
   transform: scale(1.08);
   opacity: 0.9;
 }
 
-#titulo-juegos{
-  text-align: center;
-  background-color: blueviolet;
-  color: white;
-  display: block;
-}
-
-#fila-juegos{
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+#juegos_de_caza {
   position: relative;
-  top: 250px;
-  background-color: white;
-  margin-left: 400px;
+  top: 0%;
+  margin-left: 75%;
+  margin-right: -30%;
+  
 }
 
-#juegos{
-  background-color: white;
-  height: 1100px;
+#juegos_de_Deportes {
+  position: relative;
+  top: 5px;
+  margin-left: 20%;
 }
 
-#ampliar:hover{
-  transform: scale(1.02);
+#imagdepor {
+  position: relative;
+  top: 0px;
+  margin-left: 55%;
+}
+
+#imagdepor:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+#juegos_de_Deportes {
+  position: relative;
+  top: 0px;
+  margin-left: 76%;
+  margin-right: -50%;
+}
+
+#deportes {
+  position: relative;
+  top: 25%;
+  margin-left: 15%;
+}
+
+#aventura {
+  position: relative;
+  top: -275px;
+  margin-left: 100%;
+}
+
+#Juegos_de_aventura {
+  position: relative;
+  top: 5px;
+  margin-left: 20%;
+}
+#imagventu:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+.categoria img:hover {
+  transform: scale(1.08);
   opacity: 0.9;
 }
 
-@media (max-width: 768px) {
-  #juegos {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-  #juego1{
-    display: flex;
-    position: relative;
-    top: 25px;
-    margin: 50px;
-    margin-left: 150px;
-    height: 290px;
-  }
-  #base1{
-    position: relative;
-    top: 290px;
-    margin-left: -200px;
-  }
-
-  #juego2{
-    display: flex;
-    position: relative;
-    top: -320px;
-    margin-left: 500px;
-    height: 290px;
-  }
-
-  #base2{
-    position: relative;
-    top: 290px;
-    margin-left: -180px;
-  }
-
-  #juego3{
-    display: flex;
-    position: relative;
-    top: -607px;
-    margin-left: 840px;
-    height: 280px;
-    width: 730px;
-  }
-
-  #base3{
-    position: relative;
-    top: 290px;
-    margin-left: -200px;
-  }
-  #juego4{
-    display: flex;
-    position: relative;
-    top: -890px;
-    margin-left: 1220px;
-    height: 290px;
-  }
-  #base4{
-    position: relative;
-    top: 290px;
-    margin-left: -190px;
-  }
-  #juego5{
-    display: flex;
-    position: relative;
-    top: -750px;
-    margin-left: 150px;
-    height: 290px;
-  }
-  #base5{
-    position: relative;
-    top: 290px;
-    margin-left: -200px;
-  }
-  #juego6{
-    display: flex;
-    position: relative;
-    top: -1040px;
-    margin-left: 500px;
-    height: 290px;
-  }
-  #base6{
-    position: relative;
-    top: 290px;
-    margin-left: -200px;
-  }
-  #juego7{
-    display: flex;
-    position: relative;
-    top: -1330px;
-    margin-left: 840px;
-    height: 290px;
-  }
-  #base7{
-    position: relative;
-    top: 290px;
-    margin-left: -200px;
-  }
-  #juego8{
-    display: flex;
-    position: relative;
-    top: -1619px;
-    margin-left: 1220px;
-    height: 290px;
-  }
-  #base8{
-    position: relative;
-    top: 290px;
-    margin-left: -200px;
-  }
-  #botonindex{
-    position: relative;
-    top: 250px;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px 20px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  #botonindex:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-  }
-
-  #botonComprar, #botonComprar2, #botonComprar3, #botonComprar4, #botonComprar5, #botonComprar6, #botonComprar7, #botonComprar8{
-    position: relative;
-    top: -1800px;
-    padding: 10px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 100px;
-    background-color: blueviolet;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    line-height: normal;
-  }
-  #botonComprar:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-  }
-  #botonComprar2:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-  }
-  #botonComprar3:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-  }
-  #botonComprar4:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-  }
-  #botonComprar5:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-  }
-  #botonComprar6:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-  }
-  #botonComprar7:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-  }
-  #botonComprar8:hover{
-    background-color: grey;
-    transform: scale(1.08);
-    opacity: 0.9;
-  }
-  #botonComprar{
-    position: relative;
-    top: -1990px;
-    margin-left: 150px;
-  }
-  #botonComprar2{
-    position: relative;
-    top: -1990px;
-    margin-left: 250px;
-  }
-  #botonComprar3{
-    position: relative;
-    top: -2030px;
-    margin-left: 850px;
-  }
-
-  #botonComprar4{
-    position: relative;
-    top: -2070px;
-    margin-left: 1250px;
-  }
-  #botonComprar5{
-    position: relative;
-    top: -1679px;
-    margin-left: 150px;
-  }
-
-  #botonComprar6{
-    position: relative;
-    top: -1679px;
-    margin-left: 250px;
-  }
-
-  #botonComprar7{
-    position: relative;
-    top: -1720px;
-    margin-left: 850px;
-  }
-
-  #botonComprar8{
-    position: relative;
-    top: -1759px;
-    margin-left: 1250px; }
-  #imagen4{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 107%;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(60%);
-  }
-  .imagen-fondo{
-    height: 719px;
-    background-size: cover;
-    text-align: center;
-    color: white;
-    position: relative;
-    top: -40px;
-    height: 60vh;
-  }
-  #imgperso{
-    position: absolute;
-    top: -70px;
-    left: 0;
-    width: 100%;
-    height: 107%;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(40%);
-    height: 600px;
-    border-radius: 20px;
-  }
-
-  .imagen-fondo::before{
-    content: "";
-    position: absolute;
-    top: -900px;
-    top: 6px;
-    left: 0px;
-    width: 100%;
-    height: 107%;
-    color: white;
-  }
-  #footer{
-    background-color:blueviolet;
-    text-align: center;
-    border-radius: 10px;
-    position: relative;
-    top: -40px;
-  }
-  #pie{
-    color: white;
-    position: relative;
-    top: -15px;
-    margin-left: 40px;
-  }
-  #cabeza{
-    height: 730px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 30px;
-  }
-  #formulario{
-    margin-left: 550px;
-    margin-right: 550px;
-    text-align: center;
-    background-color: white;
-    border-radius: 30px;
-    position: relative;
-    top: 90px;
-  }
-  #game{
-    color: blueviolet;
-    animation: cambiarColor 4s infinite;
-  }
-  #game:hover{ color: rgb(180, 45, 155);
-    text-shadow: 0 0 10px rgb(179, 169, 177), 0 0 20px rgb(199, 184, 193), 0 0 40px rgb(218, 205, 212); 
-    animation: parpadear 1.5s infinite alternate;
-  }
-  #sesion{
-    position: relative;
-    top: -20px;
-    color: blueviolet; } @keyframes
-    cambiarColor { 0% {
-    color: #85b61a; } 25% {
-    color: #00ff00; } 50% {
-    color: #d31668; } 75% {
-    color: #0dae68; } 100% {
-    color: #2d854b; }
-  }
-
-
-
-
-/* 🔹 Responsividad */
-@media (max-width: 992px) {
-  #cabezera {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  #juegos {
-    gap: 15px;
-  }
-
-  #juego {
-    width: 45%;
-  }
+.categoria h3 {
+  margin-top: 10px;
+  color: black;
 }
 
-@media (max-width: 600px) {
-  #cabezera {
-    padding: 10px;
-  }
+/* 🔹 Juegos populares */
+#juegos {
+  max-width: 1250px;
+  margin: 0 auto 40px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  height: -20px;
+  
+  flex: 2 1 400px;
+}
+#titulo-juegos {
+  width: 135%;
+  height: 40px;
+  border-radius: 10px;
+  transition: transform 0.3s, opacity 0.3s;
+  text-align: center;
+  background-color: blueviolet;
+  color: white;
+  margin-bottom: 20px;
+  margin-left: -20%;
+}
 
-  #gamestore {
-    font-size: 1.8rem;
-  }
+.fila-juegos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  height:-50px;
+  
+}
 
-  #textindex {
-    font-size: 1.8rem;
-  }
+#juego1{
+  position: relative;
+  top: 5%;
+  margin-left: -70%;
+  
+}
 
-  #juego {
-    width: 90%;
-  }
+#juego2{
+  position: relative;
+  top: -45%;
+  margin-left: 60%;
+  margin-right: -60%;
 
+}
+
+#juego3{
+  position: relative;
+  top: -95%;
+  margin-left: 175%;
+  margin-right: -100%;
+  
+}
+
+#base3{
+  position: relative;
+  top: -100%;
+  margin-left: 0%;
+  margin-right: -40%;
+}
+
+#juego5{
+  position: relative;
+  top: -85%;
+  margin-left: -70%;
+  
+
+}
+
+#juego6{
+  position: relative;
+  top: -135%;
+  margin-left: 90%;
+  margin-right: -30%;
+  
+}
+
+#base6{
+  position: relative;
+  top: -155%;
+  margin: 200 auto;
+}
+
+#juego7{
+  position: relative;
+  top: 445px;
+  height: 90%;
+  margin-left: 34%;
+  
+ 
+}
+#base7{
+  position: relative;
+  top: 10px;
+  margin-left: 15%;
+  margin-right: -150%;
+}
+
+
+.juego {
+  flex: 1 1 auto;
+  text-align: center;
+  height: 640px;
   
 }
 
 
+.juego img {
+  max-width: 200px;
+  height: auto;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+#ampliar:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.ampliar7:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.juego img:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.juego h4 {
+  margin-top: 10px;
+}
+
+#botonComprar, #botonComprar2, #botonComprar3, #botonComprar5, #botonComprar6, #botonComprar7 {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+}
+
+#botonComprar:hover, #botonComprar2:hover, #botonComprar3:hover, #botonComprar5:hover, #botonComprar6:hover, #botonComprar7:hover {
+  background-color: purple;
+  transform: scale(1.05);
+  opacity: 0.9;
+}
 
 
 
+#botonComprar, #botonComprar2, #botonComprar3{
+  position: relative;
+  top: -340px;
+}
+
+#botonComprar{
+  margin-left: 20px;
+}
+#botonComprar2{
+  margin-left: 470px;
+}
+#botonComprar3{
+  position: relative;
+  top: -385px;
+  margin-left: 1050px;
+}
+
+#botonComprar5, #botonComprar6, #botonComprar7{
+  position: relative;
+  top: -20px;
+}
+#botonComprar5{
+  margin-left: 2%;
+}
+#botonComprar6{
+  margin-left: 39%;
+}
+#botonComprar7{
+  position: relative;
+  top: 120px;
+  margin-left: 85%;
+  height: 40px;
+}
+
+/* 🔹 Footer */
+#footer {
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+/* 🔹 Animaciones */
+@keyframes parpadear {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* 🔹 Responsividad */
+@media (max-width: 992px) {
+  #cabezado {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #textindex {
+    font-size: 2rem;
+  }
+
+  #text {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .fila-juegos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categoria {
+    flex: 1 1 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  #gamestore {
+    font-size: 1.5rem;
+  }
+
+  #textindex {
+    font-size: 1.5rem;
+  }
+
+  
+
+  .categoria, .juego {
+    flex: 1 1 100%;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+}
+/* Botón ☰ */
+.menu-btn {
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.menu-btn:hover {
+  background-color: #f1f1f1;
+}
+
+/* Contenedor del menú */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1;
+  right: 0;
+}
+
+/* Enlaces dentro del menú */
+.dropdown-content a {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Mostrar menú al pasar el ratón */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
