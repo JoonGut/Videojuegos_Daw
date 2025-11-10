@@ -1,6 +1,6 @@
 <?php
  
-    $conexion = mysqli_connect("localhost","root","your_password","bd_videojuegos");
+    $conexion = mysqli_connect("localhost","root","","bd_videojuegos");
 
 
 
