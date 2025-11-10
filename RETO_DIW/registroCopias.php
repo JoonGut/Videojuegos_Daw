@@ -9,6 +9,9 @@ $precio_compra = $_POST['precio_compra'];
 $stock        = $_POST['stock'];
 $plataforma   = $_POST['plataforma'];
 
+
+
+
 $juego = mysqli_query($conexion, "SELECT id_juego FROM juegos WHERE nombre='$nombre_juego' LIMIT 1");
 if (mysqli_num_rows($juego) == 0) {
     echo "El juego no existe en la base de datos.";
@@ -20,9 +23,11 @@ $fila = mysqli_fetch_assoc($juego);
 $id_juego = $fila['id_juego'];
 
 
+
+
 $convertirPlataforma = mysqli_query($conexion, "SELECT id_plataforma FROM plataformas WHERE nombre='$plataforma' LIMIT 1");
 if (mysqli_num_rows($convertirPlataforma) == 0) {
-    echo "La plataformano existe en la base de datos.";
+    echo "La plataforma no existe en la base de datos.";
     echo '<a href="eleccion.html"><button id="boton">Volver</button></a>';
     mysqli_close($conexion);
     exit;
@@ -30,7 +35,32 @@ if (mysqli_num_rows($convertirPlataforma) == 0) {
 $fila2 = mysqli_fetch_assoc($convertirPlataforma);
 $id_plataforma = $fila2['id_plataforma'];
 
-$sqlinsertar = "INSERT INTO copias (id_almacenes, id_juegos, precio_nuevo, precio_seminuevo, precio_compra, stock,id_plataformas)
+
+$existe = mysqli_query($conexion, "SELECT 1 FROM copias 
+WHERE id_juegos='$id_juego' AND id_plataformas='$id_plataforma' LIMIT 1");
+
+if (mysqli_num_rows($existe) > 0) {
+     $sqlinsertar1="UPDATE copias set stock=stock+$stock where id_juegos='$id_juego' AND id_plataformas='$id_plataforma';";
+    $ok = mysqli_query($conexion, $sqlinsertar1);
+    if ($ok) {
+    $id_copia = mysqli_insert_id($conexion);
+
+    echo "<h2>Stock Actualizado</h2>";
+    echo "<ul>";
+    echo "<li><strong>Stock:</strong> $stock</li>";
+    echo '<a href="eleccion.html"><button id="boton">Volver</button></a>';
+} else {
+    echo '
+        <script>  
+            alert("No se pudo guardar la copia.");
+            window.location = "eleccion.html";
+        </script>
+    ';
+}
+
+} else {
+    
+    $sqlinsertar = "INSERT INTO copias (id_almacenes, id_juegos, precio_nuevo, precio_seminuevo, precio_compra, stock,id_plataformas)
                 VALUES ('$id_almacen', '$id_juego', '$precio_nuevo', '$precio_semi', '$precio_compra', '$stock','$id_plataforma')";
 $ok = mysqli_query($conexion, $sqlinsertar);
 
@@ -55,7 +85,10 @@ if ($ok) {
             window.location = "eleccion.html";
         </script>
     ';
-}
+}}
+
+
+
 
 mysqli_close($conexion);
 exit;
