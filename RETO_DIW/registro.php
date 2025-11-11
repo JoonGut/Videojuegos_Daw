@@ -1,3 +1,10 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Página PHP</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+</html>
 <?php
 include 'conexion.php';
 
@@ -23,13 +30,26 @@ if ($ok) {
     $rs = mysqli_query($conexion, "SELECT nombre,fecha_publicacion,estudios_desarrollo FROM juegos WHERE nombre='$nom'");
     $row = mysqli_fetch_assoc($rs);
 
-    echo "<h2>Registro completado</h2>";
-    echo "<ul>";
-    echo "<li><strong>Nombre:</strong> " . $row['nombre'] . "</li>";
-    echo "<li><strong>Fecha De Publicacion:</strong> " . $row['fecha_publicacion'] . "</li>";
-    echo "<li><strong>Estudios De Desarrollo:</strong> " . $row['estudios_desarrollo'] . "</li>";
-    echo "</ul>";
-    echo '<a href="eleccion.html"><button id="boton">Volver</button></a>';
+    echo '<div class="barra">';
+echo '  <h1>Registro</h1>';
+echo '</div>';
+
+echo '<div class="formulario">';
+echo '  <form>';
+echo '    <h2 style="margin:0;">Registro completado</h2>';
+
+echo '    <ul style="list-style:none; padding-left:0; margin:8px 0 0;">';
+echo '      <li><strong>Nombre:</strong> ' . htmlspecialchars($row["nombre"] ?? "", ENT_QUOTES, "UTF-8") . '</li>';
+echo '      <li><strong>Fecha de publicación:</strong> ' . htmlspecialchars($row["fecha_publicacion"] ?? "", ENT_QUOTES, "UTF-8") . '</li>';
+echo '      <li><strong>Estudios de desarrollo:</strong> ' . htmlspecialchars($row["estudios_desarrollo"] ?? "", ENT_QUOTES, "UTF-8") . '</li>';
+echo '    </ul>';
+
+echo '    <a href="eleccion.html" style="text-decoration:none; margin-top:12px;">';
+echo '      <button id="boton" type="button">Volver</button>';
+echo '    </a>';
+
+echo '  </form>';
+echo '</div>';
 } else {
     echo '
         <script>  

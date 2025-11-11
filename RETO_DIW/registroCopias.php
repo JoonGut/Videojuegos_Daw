@@ -1,3 +1,10 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Página PHP</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+</html>
 <?php
 include 'conexion.php';
 
