@@ -3,7 +3,8 @@ include("conexion.php");
 $usuario = $_POST['usuario'];
 $password = $_POST['password'];
 
-$query = "SELECT * FROM empleados WHERE usuario = '$usuario' AND password = '$password'";
+
+$query = "SELECT * FROM trabajadores WHERE usuario = '$usuario' AND password = '$password'";
 $result = mysqli_query($conexion, $query);
 
 if (mysqli_num_rows($result) > 0) {

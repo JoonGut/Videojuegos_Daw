@@ -4,36 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilos_registro.css">
+    <script src="../js/registro.js"></script>
     <title>Registrate</title>
 </head>
 <body>
     <div class="formulario">
         <h1 class="titulo">REGISTRO</h1>
-        <form>
+        <form method="post" action="../php/insertarEmpleado.php">
             <div class="username">
-                <input type="text" required>
+                <input type="text" name="DNI" required>
+                <label>DNI</label>
+            </div>
+            <div class="username">
+                <input type="text" name="nombre" required>
                 <label>Nombre</label>
             </div>
 
             <div class="username">
-                <input type="text" required>
+                <input type="text" name="apellido" required>
                 <label>Apellido</label>
             </div>
-
             <div class="username">
-                <input type="text" required>
+                <input type="text" name="fecha_nacimiento" required>
+                <label>Fecha de Nacimiento</label>
+            </div>
+            <div class="username">
+                <input type="text" name="usuario" required>
+                <label>Usuario</label>
+            </div>
+            <div class="username">
+                <input type="text" name="email" required>
                 <label>Email</label>
             </div>
             <div class="username">
-                <input type="password" required>
+                <!--<label for="listaEmpleados">Direccion</label>-->
+                <!-- El select mostrará direcciones/nombres pero su name es 'tienda_id' para enviar el ID al servidor -->
+                <select id="listaEmpleados">
+                </select>
+                <!-- Hidden input de respaldo (se actualiza al cambiar la selección) -->
+                <input type="hidden" id="tienda_id_hidden" name="id_tiendas" value="">
+            </div>
+            <div class="username">
+                <input type="password" name="password" required>
                 <label>Contraseña</label>
             </div>
-            <input type="submit" value="Iniciar" href="juegos.html">
+            <input type="submit" value="Iniciar">
             <div class="registrarse">
                 ¿Ya tienes cuenta? <a href="login.html">Iniciar Sesión</a>
 
             </div>
         </form>
     </div>
+
 </body>
+
 </html>

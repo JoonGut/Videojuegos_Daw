@@ -6,8 +6,6 @@ body {
     height: 100vh;
 }
 
-
-
 .titulo{
 font-family: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap";
 }
@@ -17,16 +15,21 @@ font-family: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;7
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    /* Formulario más compacto */
+    width: 320px;
+    max-width: 92%;
     background: white;
-    border-radius: 10px;
-    /* box-shadow corregido: usar rgba con valores o color simple */
-    box-shadow: 0 0 10px black;
+    border-radius: 8px;
+    /* sombra más suave */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    padding: 12px 14px;
 }
 
 .formulario h1{
     text-align: center;
-    padding:20px;
+    padding:12px 8px;
+    font-size: 18px;
+    margin: 0 0 8px 0;
     border-bottom: 1px solid silver;
 }
 
@@ -35,17 +38,17 @@ font-family: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;7
     box-sizing: border-box;
 }
 
- .username{
+.username{
     position: relative;
     border-bottom: 2px solid #adadac;
-    margin: 30px;
+    margin: 12px; /* margen reducido para compactar */
 }
 
 .username input{
     width: 100%;
-    padding: 5px;
-    height: 40px;
-    font-size: 16px;
+    padding: 6px;
+    height: 36px;
+    font-size: 15px;
     border: none;
     background: none;
     outline: none;
@@ -91,16 +94,6 @@ font-family: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;7
     top: -5px;
     color: #7b3b94;
 }
-/*Mostrar de manera visual si es valid o invalid
-.username input:valid ~ label {
-    top: -5px;
-    color: green;
-}
-.username input:invalid ~ label {
-    top: -5px;
-    color: red;
-}
-*/
 
 input[type='submit']{
     width: 80%;
