@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="formulario">
+        <div class="barra">
+            <a href="eleccion.html"><button id="boton">Volver</button></a>
+            <h1>Introducir copias</h1>
+        </div>
+
+            <form action="registroCopias.php" method="post">
+    <label>Juego: <input type="text" name="nombre_juego" required></label><br>
+    <label>Numero de Almacen: <input type="number" name="id_almacen" required></label><br>
+    <label>Precio nuevo: <input type="number" step="0.01" name="precio_nuevo" required></label><br>
+    <label>Precio seminuevo: <input type="number" step="0.01" name="precio_seminuevo" required></label><br>
+    <label>Precio compra: <input type="number" step="0.01" name="precio_compra" required></label><br>
+    <label>Stock: <input type="number" name="stock" min="0" required></label><br>
+    <label>Plataforma: <input type="text" name="plataforma" required></label><br>
+    <button type="submit">Guardar copia</button>
+</form>
+
+    </div>
+</body>
+</html>
