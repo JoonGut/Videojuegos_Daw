@@ -12,14 +12,14 @@ if (mysqli_num_rows($existe) > 0) {
     $ok = mysqli_query($conexion, $sqlborrar);
     if ($ok) {
     echo"El juego ha sido borrado de la base de datos.";
-    echo '<a href="eleccion.html"><button id="boton">Volver</button></a>';
+    echo '<a href="../html/eleccion.html"><button id="boton">Volver</button></a>';
     mysqli_close($conexion);
     exit;
 } else {
     echo '
         <script>  
             alert("No se pudo borrar el juego.");
-            window.location = "eleccion.html";
+            window.location = "../html/eleccion.html";
         </script>
     ';
 }

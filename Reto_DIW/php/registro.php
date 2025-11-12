@@ -44,7 +44,7 @@ echo '      <li><strong>Fecha de publicación:</strong> ' . htmlspecialchars($ro
 echo '      <li><strong>Estudios de desarrollo:</strong> ' . htmlspecialchars($row["estudios_desarrollo"] ?? "", ENT_QUOTES, "UTF-8") . '</li>';
 echo '    </ul>';
 
-echo '    <a href="eleccion.html" style="text-decoration:none; margin-top:12px;">';
+echo '    <a href="../html/eleccion.html" style="text-decoration:none; margin-top:12px;">';
 echo '      <button id="boton" type="button">Volver</button>';
 echo '    </a>';
 
