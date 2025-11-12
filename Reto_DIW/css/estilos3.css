@@ -458,3 +458,50 @@ iframe {
     }
 
 }
+.tabla-juegos {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    background: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+}
+
+.tabla-juegos th {
+    text-align: left;
+    padding: 12px 10px;
+    border-bottom: 1px solid #e6e6e6;
+    white-space: nowrap;
+    background: #f7f7f7;
+    font-weight: 600;
+}
+
+.tabla-juegos td {
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tabla-juegos tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.boton-regresar {
+    background: #8004BE;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.boton-regresar:hover {
+    background: #a34bd9;
+    transform: scale(1.05);
+}
