@@ -4,16 +4,22 @@ $usuario = $_POST['usuario'];
 $password = $_POST['password'];
 
 
-$query = "SELECT * FROM trabajadores WHERE usuario = '$usuario' AND password = '$password'";
-$result = mysqli_query($conexion, $query);
+$password_bd = "SELECT password FROM trabajadores WHERE usuario = '$usuario'";
+$result = mysqli_query($conexion, $password_bd);
 
 if (mysqli_num_rows($result) > 0) {
-    // El usuario y la contraseña son correctos
-    session_start();
-    $_SESSION['usuario'] = $usuario;
-    header("Location: ../html/inicio.html");
-} else {
-    // El usuario o la contraseña son incorrectos
+    $row = mysqli_fetch_assoc($result);
+    $hashed_password = trim($row['password']);
+
+    if (password_verify($password, $hashed_password)) {
+        session_start();
+        $_SESSION['usuario'] = $usuario;
+        header("Location: ../index.html");
+    } else {
+        echo "Contraseña incorrecta";
+    }
+} else   {
+
     echo "No existe ese usuario";
 }
 ?>

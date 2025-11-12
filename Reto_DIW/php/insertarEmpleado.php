@@ -9,8 +9,9 @@ $mail = $_POST['email'];
 $password = $_POST['password'];
 $id_tiendas = $_POST['id_tiendas'];
 
+$password_hasheada = password_hash($password, PASSWORD_DEFAULT);
 
-$query = "INSERT INTO trabajadores (DNI, nombre, apellido, fecha_nacimiento, email, usuario, password, id_tiendas) VALUES ('$DNI', '$nombre', '$apellido', '$fecha_nacimiento', '$mail', '$usuario', '$password', '$id_tiendas')";
+$query = "INSERT INTO trabajadores (DNI, nombre, apellido, fecha_nacimiento, email, usuario, password, id_tiendas) VALUES ('$DNI', '$nombre', '$apellido', '$fecha_nacimiento', '$mail', '$usuario', '$password_hasheada', '$id_tiendas')";
 $result = mysqli_query($conexion, $query);
 if ($result) {
     echo "Empleado insertado correctamente";
