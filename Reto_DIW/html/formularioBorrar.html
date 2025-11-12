@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alta</title>
-    <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <title>Borrar Juego</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilos3.css">
+  <link rel="shortcut icon" href="../imagenes/faviconGame.png">
 </head>
 <body>
-    <div class="formulario">
-        <div class="barra">
-            <a href="eleccion.html"><button id="boton">Volver</button></a>
-            <h1>Borrar Juego</h1>
+  <header>
+    <nav>
+      <div class="menu">
+        <img class="logo" src="../imagenes/faviconGame.png" alt="Game">
+        <div class="nav_items"><a href="../index.html">Inicio</a></div>
+      </div>
+      <div class="dropdown">
+        <button class="menu-btn">☰</button>
+        <div class="dropdown-content">
+          <a href="../index.html">Inicio</a>
         </div>
+      </div>
+    </nav>
+    <section class="textoheader">
+      <h1>Game</h1>
+      <h4>Panel de Acciones</h4>
+    </section>
+  </header>
 
-        <form class="login-form ficha panel" method="POST" action="borrar.php">             
-            <div class="grid">
-                <div class="col izq">
-                    <label for="fld_nombre">Nombre Del Juego</label>
-                    <input id="fld_nombre" type="text" name="nombre_juego" required>
-                </div>
-            </div>
-            <div class="acciones">
-                <button type="submit">Enviar producto</button>
-            </div>
-        </form>
-    </div>
+  <div class="contenedor">
+    <h2 class="titulo">Borrar Juego</h2>
+    <form method="POST" action="borrar.php">
+      <div class="formulario">
+        <div class="campo">
+          <label for="fld_nombre">Nombre del juego</label>
+          <input id="fld_nombre" type="text" name="nombre_juego" placeholder="Ej. God of War" required>
+        </div>
+      </div>
+
+      <div style="margin-top:20px">
+        <button class="boton-regresar" type="submit">Enviar</button>
+        <a href="../html/eleccion.html">
+          <button class="boton-regresar" type="button">Regresar</button>
+        </a>
+      </div>
+    </form>
+  </div>
 </body>
 </html>

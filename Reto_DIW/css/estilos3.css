@@ -505,3 +505,57 @@ iframe {
     background: #a34bd9;
     transform: scale(1.05);
 }
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.campo input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+}
+.contenedor .menu{
+  position: static;
+  height: auto;
+  background: none;
+  transform: none;
+  padding: 0;
+  margin: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.contenedor .menu .nav_items {
+  width: auto;
+  flex: 0 1 auto;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid #8004BE;
+  transition: all 0.3s ease;
+}
+.contenedor .menu .nav_items:hover {
+  background-color: rgba(128, 4, 190, 0.08);
+  border-color: #8004BE;
+}
+

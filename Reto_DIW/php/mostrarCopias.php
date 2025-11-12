@@ -42,7 +42,7 @@ if ($respuesta && $respuesta->num_rows > 0) {
     }
 
     echo "</table>";
-    echo '<a href="eleccion.html"><button id="boton">Regresar</button></a>';
+    echo '<a href="../html/eleccion.html"><button id="boton">Regresar</button></a>';
 } else {
     echo "No se encontraron registros en la base de datos.";
 }
