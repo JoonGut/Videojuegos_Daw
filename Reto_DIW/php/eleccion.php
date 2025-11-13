@@ -45,8 +45,7 @@ if (!isset($_SESSION['usuario'])) {
   </header>
 
   <main class="formulario contenedor">
-    <h1 class="titulo" id="bienvenida">Elige una opción</h1>
-    <p>Selecciona qué operación deseas realizar.</p>
+    <h1 class="titulo" id="bienvenida">Selecciona qué operación deseas realizar.</h1>
 
     <nav class="panel-acciones">
   
