@@ -559,7 +559,6 @@ iframe {
   border-color: #8004BE;
 }
 
-/* GRID del panel */
 .panel-acciones {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -567,11 +566,10 @@ iframe {
   margin-top: 40px;
 }
 
-/* Botones cuadrados */
 .accion {
   background: #ffffff;
-  border: 1px solid #e5e5e5;
-  padding: 25px 10px;
+  border: 2px solid #e5e5e5;
+  padding: 25px 8px;
   text-align: center;
   border-radius: 14px;
   color: #1c1c1c;
@@ -584,14 +582,12 @@ iframe {
   justify-content: center;
 }
 
-/* Icono centrado */
 .accion i {
   font-size: 38px;
   margin-bottom: 12px;
-  color: #E20074;     /* Magenta GAME */
+  color: #E20074;     
 }
 
-/* Hover pro */
 .accion:hover {
   border-color: #E20074;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
