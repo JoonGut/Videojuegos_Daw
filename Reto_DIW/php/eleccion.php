@@ -16,6 +16,7 @@ if (!isset($_SESSION['usuario'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/estilos3.css">
   <link rel="shortcut icon" href="../imagenes/faviconGame.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">    
   <title>Acciones</title>
 </head>
 <body>
@@ -47,14 +48,39 @@ if (!isset($_SESSION['usuario'])) {
     <h1 class="titulo" id="bienvenida">Elige una opción</h1>
     <p>Selecciona qué operación deseas realizar.</p>
 
-    <nav class="menu" aria-label="Operaciones">
-      <a class="nav_items" href="../html/formulario.html">Introducir Juego</a>
-      <a class="nav_items" href="../html/formularioBorrar.html">Borrar Juego</a>
-      <a class="nav_items" href="../php/mostrar.php">Ver todos los Juegos</a>
-      <a class="nav_items" href="../html/formularioCopias.html">Introducir Copias</a>
-      <a class="nav_items" href="../php/mostrarCopias.php">Ver Copias</a>
-      <a class="nav_items" href="../html/formularioBorrarCopias.html">Borrar Copias</a>
-    </nav>
+    <nav class="panel-acciones">
+  
+  <a class="accion" href="../html/formulario.html">
+    <i class="fa-solid fa-plus"></i>
+    <span>Introducir Juego</span>
+  </a>
+
+  <a class="accion" href="../html/formularioBorrar.html">
+    <i class="fa-solid fa-trash"></i>
+    <span>Borrar Juego</span>
+  </a>
+
+  <a class="accion" href="../php/mostrar.php">
+    <i class="fa-solid fa-list"></i>
+    <span>Ver Juegos</span>
+  </a>
+
+  <a class="accion" href="../html/formularioCopias.html">
+    <i class="fa-solid fa-copy"></i>
+    <span>Introducir Copias</span>
+  </a>
+
+  <a class="accion" href="../php/mostrarCopias.php">
+    <i class="fa-solid fa-folder-open"></i>
+    <span>Ver Copias</span>
+  </a>
+
+  <a class="accion" href="../html/formularioBorrarCopias.html">
+    <i class="fa-solid fa-xmark"></i>
+    <span>Borrar Copias</span>
+  </a>
+
+</nav>
   </main>
 </body>
 </html>

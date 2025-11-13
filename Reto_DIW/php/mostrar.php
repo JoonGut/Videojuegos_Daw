@@ -65,7 +65,7 @@ $respuesta = $conexion->query($consulta);
     echo "</table>";
     echo "</div>";
 
-    echo "<a href='../html/eleccion.html'>";
+    echo "<a href='../php/eleccion.php'>";
     echo "<button class='boton-regresar'>Regresar</button>";
     echo "</a>";
     } else {
