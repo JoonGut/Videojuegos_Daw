@@ -76,5 +76,18 @@ $respuesta = $conexion->query($consulta);
       ?>
     </div>
   </main>
+  <footer>
+  <div class="contenedor-footer">
+        <div class="contenido-footer">
+            <h4>Phone</h4>
+            <p>+34 944 88 66 22</p>
+        </div>
+        <div class="contenido-footer">
+            <h4>Email</h4>
+            <p>info_game@game.com</p>
+        </div>
+
+    </div>
+</footer>
 </body>
 </html>
