@@ -66,19 +66,21 @@ if (!isset($_SESSION['usuario'])) {
   </a>
 
   <a class="accion" href="../html/formularioCopias.html">
-    <i class="fa-solid fa-copy"></i>
+    <i class="fa-solid fa-plus"></i>
     <span>Introducir Copias</span>
   </a>
 
+ <a class="accion" href="../html/formularioBorrarCopias.html">
+    <i class="fa-solid fa-trash"></i>
+    <span>Borrar Copias</span>
+  </a>
+
   <a class="accion" href="../php/mostrarCopias.php">
-    <i class="fa-solid fa-folder-open"></i>
+    <i class="fa-solid fa-list"></i>
     <span>Ver Copias</span>
   </a>
 
-  <a class="accion" href="../html/formularioBorrarCopias.html">
-    <i class="fa-solid fa-xmark"></i>
-    <span>Borrar Copias</span>
-  </a>
+ 
 
 </nav>
   </main>
