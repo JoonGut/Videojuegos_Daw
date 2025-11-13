@@ -18,7 +18,7 @@ $existe = mysqli_query($conexion, "SELECT 1 FROM juegos WHERE nombre='$nom' LIMI
 if (mysqli_num_rows($existe) > 0) {
     ;
     echo"El juego ya existe en la base de datos.";
-    echo '<a href="eleccion.html"><button id="boton">Volver</button></a>';
+    echo '<a href="../php/eleccion.php"><button id="boton">Volver</button></a>';
     mysqli_close($conexion);
     exit;
 } 
@@ -44,7 +44,7 @@ echo '      <li><strong>Fecha de publicación:</strong> ' . htmlspecialchars($ro
 echo '      <li><strong>Estudios de desarrollo:</strong> ' . htmlspecialchars($row["estudios_desarrollo"] ?? "", ENT_QUOTES, "UTF-8") . '</li>';
 echo '    </ul>';
 
-echo '    <a href="../html/eleccion.html" style="text-decoration:none; margin-top:12px;">';
+echo '    <a href="../php/eleccion.php" style="text-decoration:none; margin-top:12px;">';
 echo '      <button id="boton" type="button">Volver</button>';
 echo '    </a>';
 
@@ -54,7 +54,7 @@ echo '</div>';
     echo '
         <script>  
             alert("No se pudo guardar el usuario.");
-            window.location = "eleccion.html";
+            window.location = "../php/eleccion.php";
         </script>
     ';
 }
