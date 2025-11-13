@@ -80,11 +80,11 @@ $respuesta = $conexion->query($consulta);
           }
 
           echo "</table>";
-          echo "<a href='../html/eleccion.html'><button class='boton-regresar' type='button'>Regresar</button></a>";
+          echo "<a href='../php/eleccion.php'><button class='boton-regresar' type='button'>Regresar</button></a>";
       } else {
           echo "<p>No se encontraron registros en la base de datos.</p>";
       }
-      $conexion->close();
+      $conexion->close();                                   
       ?>
     </div>
   </main>
