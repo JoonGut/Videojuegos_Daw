@@ -1,9 +1,9 @@
 <?php
-session_start(); // Inicia la sesión o continúa la existente
+session_start(); 
 
-// Verifica si el usuario ha iniciado sesión
+
 if (!isset($_SESSION['usuario'])) {
-    header("Location: ../html/login.html"); // Si no hay sesión, redirige al login
+    header("Location: ../html/login.html"); 
     exit; // Detiene la ejecución del resto de la página
 }
 ?>
@@ -83,18 +83,5 @@ if (!isset($_SESSION['usuario'])) {
 
 </nav>
   </main>
-  <footer>
-  <div class="contenedor-footer">
-        <div class="contenido-footer">
-            <h4>Phone</h4>
-            <p>+34 944 88 66 22</p>
-        </div>
-        <div class="contenido-footer">
-            <h4>Email</h4>
-            <p>info_game@game.com</p>
-        </div>
-
-    </div>
-</footer>
 </body>
 </html>

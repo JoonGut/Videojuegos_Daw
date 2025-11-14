@@ -129,3 +129,14 @@ input[type='submit']:hover{
 .registrarse a:hover{
     text-decoration: underline;
 }
+
+/* estilos para validación */
+.invalid {
+    outline: none;
+    border-bottom-color: crimson !important;
+}
+.error-msg {
+    color: crimson;
+    font-size: 0.85em;
+    margin-top: 4px;
+}

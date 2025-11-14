@@ -14,7 +14,7 @@ if (mysqli_num_rows($result) > 0) {
     if (password_verify($password, $hashed_password)) {
         session_start();
         $_SESSION['usuario'] = $usuario;
-        header("Location: ../index.html");
+        header("Location: eleccion.php");
     } else {
         echo "Contraseña incorrecta";
     }
