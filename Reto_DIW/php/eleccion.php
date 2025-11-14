@@ -3,7 +3,7 @@ session_start(); // Inicia la sesión o continúa la existente
 
 // Verifica si el usuario ha iniciado sesión
 if (!isset($_SESSION['usuario'])) {
-    header("Location: login.html"); // Si no hay sesión, redirige al login
+    header("Location: ../html/login.html"); // Si no hay sesión, redirige al login
     exit; // Detiene la ejecución del resto de la página
 }
 ?>
