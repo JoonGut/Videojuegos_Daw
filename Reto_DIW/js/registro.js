@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const hidden = document.getElementById('tienda_id_hidden');
     const form = document.querySelector('.formulario form');
 
-    // Crea un span de error junto al input
     function getErrorSpan(el) {
         let span = el.parentNode.querySelector('.error-msg');
         if (!span) {
@@ -31,14 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Limpia el select y agrega la opción por defecto
+
     select.innerHTML = '';
     const defaultOption = document.createElement('option');
     defaultOption.value = '';
     defaultOption.textContent = 'Selecciona una direccion';
     select.appendChild(defaultOption);
 
-    // Cargar datos desde PHP
     fetch('../php/getEmpleados.php')
         .then(response => {
             if (!response.ok) throw new Error('Error HTTP ' + response.status);
@@ -54,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 select.appendChild(opt);
             });
 
-            // Inicializa hidden con el valor actual (por si hay algo seleccionado)
             hidden.value = select.value || '';
         })
         .catch(err => {
@@ -67,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearError(select);
     });
 
-    // ---------- Validación del formulario ----------
+
     if (form) {
         // Mapea campos por name para validarlos
         const fields = {
@@ -81,11 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
             tienda: select
         };
 
-        // Validadores individuales
+
         function validaDNI(val) {
             if (!val){
                 return 'El DNI es obligatorio.';
             }else{  
+
                 if (!/^[0-9]{7,8}[A-Za-z]$/.test(val)){
                     return 'Formato DNI inválido (ej: 12345678A).';
                 } else{
@@ -133,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!val) {
                 return 'La fecha de nacimiento es obligatoria.';
             }
-            // Formato esperado: yyyy/mm/dd
+
             if (!/^\d{4}\/\d{2}\/\d{2}$/.test(val)) {
                 return 'La fecha debe tener el formato yyyy/mm/dd.';
             }
@@ -143,7 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const d = parseInt(dStr, 10);
 
             if (m < 1 || m > 12) return 'Mes inválido.';
-            // Creamos un objeto Date con los componentes y comprobamos que coincidan (evita 2021/02/30)
             const fecha_correcta = new Date(y, m - 1, d);
             if (fecha_correcta.getFullYear() !== y || fecha_correcta.getMonth() !== m - 1 || fecha_correcta.getDate() !== d) {
                 return 'Fecha inválida.';
@@ -156,8 +153,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!val){
                 return 'El usuario es obligatorio.';
             } else{
-                if (val.length < 4) return 'El usuario debe tener al menos 4 caracteres.';
-                return '';
+                if (val.length < 4){
+                    return 'El usuario debe tener al menos 4 caracteres.';
+                }else{
+                    if (!/^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$/.test(val)){
+                        return 'Usuario contiene caracteres no permitidos.';
+                    } 
+                        return '';
+                } 
+
             }
         }
 
@@ -182,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (val.length < 8){
                     return 'La contraseña debe tener al menos 8 caracteres.';
                 }else{
-                    // Validacion contraseña con numeros y letras
                     if (!/[0-9]/.test(val) || !/[A-Za-z]/.test(val)){
                         return 'La contraseña debe contener letras y números.';
                     }else{
@@ -200,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Validación completa, devuelve true si OK
         function validarTodos() {
             let ok = true;
             // DNI
