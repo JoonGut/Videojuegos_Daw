@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Introducir Copias</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilos3.css">
+  <link rel="shortcut icon" href="../imagenes/faviconGame.png">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="menu">
+        <img class="logo" src="../imagenes/faviconGame.png" alt="Game">
+        <div class="nav_items"><a href="../index.html">Inicio</a></div>
+      </div>
+      <div class="dropdown">
+        <button class="menu-btn">☰</button>
+        <div class="dropdown-content">
+          <a href="../index.html">Inicio</a>
+        </div>
+      </div>
+    </nav>
+    <section class="textoheader">
+      <h1>Game</h1>
+      <h4>Panel de Acciones</h4>
+    </section>
+  </header>
+
+  <div class="contenedor">
+    <h2 class="titulo">Introducir Copias</h2>
+    <form method="POST" action="../php/registroCopias.php">
+      <div class="formulario">
+        <div class="campo">
+          <label for="nombre_juego">Nombre del juego</label>
+          <input id="nombre_juego" type="text" name="nombre_juego" placeholder="Ej. Elden Ring" required>
+        </div>
+
+        <div class="campo">
+          <label for="id_almacen">Número de almacén</label>
+          <input id="id_almacen" type="number" name="id_almacen" placeholder="Ej. 1" required>
+        </div>
+
+        <div class="campo">
+          <label for="precio_nuevo">Precio nuevo</label>
+          <input id="precio_nuevo" type="number" step="0.01" name="precio_nuevo" placeholder="Ej. 59.99" required>
+        </div>
+
+        <div class="campo">
+          <label for="precio_seminuevo">Precio seminuevo</label>
+          <input id="precio_seminuevo" type="number" step="0.01" name="precio_seminuevo" placeholder="Ej. 39.99" required>
+        </div>
+
+        <div class="campo">
+          <label for="precio_compra">Precio compra</label>
+          <input id="precio_compra" type="number" step="0.01" name="precio_compra" placeholder="Ej. 25.00" required>
+        </div>
+
+        <div class="campo">
+          <label for="stock">Stock</label>
+          <input id="stock" type="number" name="stock" min="0" placeholder="Ej. 20" required>
+        </div>
+
+        <div class="campo">
+          <label for="plataforma">Plataforma</label>
+          <input id="plataforma" type="text" name="plataforma" placeholder="Ej. PS5 / PC / Xbox" required>
+        </div>
+      </div>
+
+      <div style="margin-top:20px">
+        <button class="boton-regresar" type="submit">Guardar copia</button>
+        <a href="../php/eleccion.php">
+          <button class="boton-regresar" type="button">Regresar</button>
+        </a>
+      </div>
+    </form>
+  </div>
+  <footer>
+  <div class="contenedor-footer">
+        <div class="contenido-footer">
+            <h4>Phone</h4>
+            <p>+34 944 88 66 22</p>
+        </div>
+        <div class="contenido-footer">
+            <h4>Email</h4>
+            <p>info_game@game.com</p>
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>
